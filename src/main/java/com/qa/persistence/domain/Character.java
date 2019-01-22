@@ -13,10 +13,7 @@ public class Character {
 	private String name;
 	private String race;
 	private String characterClass;
-	private String background;
 	private int level;
-	private String subClass;
-	private String spells;
 	private int strength;
 	private int dexterity;
 	private int constitution;
@@ -57,10 +54,7 @@ public class Character {
 		this.name = name;
 		this.race = race;
 		this.characterClass = characterClass;
-		this.background = background;
 		this.level = level;
-		this.subClass = subClass;
-		this.spells = spells;
 		this.strength = strength;
 		this.dexterity = dexterity;
 		this.constitution = constitution;
@@ -119,13 +113,7 @@ public class Character {
 		this.characterClass = characterClass;
 	}
 
-	public String getBackground() {
-		return background;
-	}
 
-	public void setBackground(String background) {
-		this.background = background;
-	}
 
 	public int getLevel() {
 		return level;
@@ -133,22 +121,6 @@ public class Character {
 
 	public void setLevel(int level) {
 		this.level = level;
-	}
-
-	public String getSubClass() {
-		return subClass;
-	}
-
-	public void setSubClass(String subClass) {
-		this.subClass = subClass;
-	}
-
-	public String getSpells() {
-		return spells;
-	}
-
-	public void setSpells(String spells) {
-		this.spells = spells;
 	}
 
 	public int getStrength() {

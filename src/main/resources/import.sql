@@ -1,6 +1,5 @@
-INSERT INTO TRAINEE (id, traineeID, traineeName ) VALUES (1, 'TS1', 'Thomas Shawley')
-INSERT INTO TRAINEE (id, traineeID, traineeName ) VALUES (2, 'AT1', 'Alex Thorpe')
-INSERT INTO TRAINEE (id, traineeID, traineeName ) VALUES (3, 'MH1', 'Matthew Hussey')
+INSERT INTO CHARACTER (id, name, race, characterClass, background, level, strength, dexterity, constitution, intelligence, wisdom, charisma, acrobatics, animalHandling, arcana, deception, history, insight, intimidation, investigation, medicine, nature, perception, performance, persausion, religion, sleightOfHand, stealth, survival) VALUES (1, 'Finaran Goldhill', 'Halfling', 'Bard', 7, 11, 16, 13, 15, 15, 20, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0)
+INSERT INTO CHARACTER (id, name, race, characterClass, background, level, strength, dexterity, constitution, intelligence, wisdom, charisma, acrobatics, animalHandling, arcana, deception, history, insight, intimidation, investigation, medicine, nature, perception, performance, persausion, religion, sleightOfHand, stealth, survival) VALUES (2, 'Twig Willow-Weed', 'Half-Elf', 'Druid', 3, 12, 15, 14, 13, 18, 10, 0, 1, 0, 1, 0, 0, 0, 0, 1 ,0, 1, 1, 0, 0, 0, 0, 0, 1)
+INSERT INTO CHARACTER (id, name, race, characterClass, background, level, strength, dexterity, constitution, intelligence, wisdom, charisma, acrobatics, animalHandling, arcana, deception, history, insight, intimidation, investigation, medicine, nature, perception, performance, persausion, religion, sleightOfHand, stealth, survival) VALUES (3, 'Jess Von-Eingard', 'Elf', 'Fighter', 5, 18, 11, 17, 12, 11, 8, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0)
 
-INSERT INTO CLASSROOM (id, classroomID, trainer, trainees) VALUES (1, 1, 'Billy Bob', 'TS1')
-INSERT INTO CLASSROOM (id, classroomID, trainer, trainees) VALUES (2, 2, 'Bob Billy', 'AT1')
+INSERT INTO USER (id, username, password) VALUES (1, 'TomShawley', 'password')
