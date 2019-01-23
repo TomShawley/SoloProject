@@ -1,5 +1,6 @@
 package com.qa.persistence.repository;
 
+import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
 
 import javax.enterprise.inject.Default;
@@ -30,14 +31,14 @@ public class CharacterDB implements Repository {
 
 		return null;
 	}
-
+	@Transactional(REQUIRED)
 	public String createCharacter(String character) {
 		Character aCharacter = util.getObjectForJSON(character, Character.class);
 		manager.persist(aCharacter);
 		return "{\"message\": \"character has been sucessfully added\"}";
 
 	}
-
+	@Transactional(REQUIRED)
 	public String deleteCharacter(Long id) {
 		Character characterInDB = manager.find(Character.class, id);
 		if (characterInDB != null) {
@@ -47,7 +48,7 @@ public class CharacterDB implements Repository {
 		return "{\"message\": \"account sucessfully deleted\"}";
 
 	}
-
+	@Transactional(REQUIRED)
 	public String updateCharacter(Long id, String character) {
 		Character aCharacter = manager.find(Character.class, id);
 		manager.remove(aCharacter);

@@ -22,21 +22,21 @@ public class CharacterEndpoint {
 		return service.createCharacter(character);
 	}
 
-	@Path("/deleteCharacter")
+	@Path("/deleteCharacter/{id}")
 	@DELETE
 	@Produces({ "application/json" })
 	public String deleteCharacter(Long id) {
 		return service.deleteCharacter(id);
 	}
 
-	@Path("/updateCharacter")
+	@Path("/updateCharacter/{id}")
 	@PUT
 	@Produces({ "application/json" })
 	public String updateCharacter(Long id, String character) {
 		return service.updateCharacter(id, character);
 	}
 
-	@Path("/findCharacter")
+	@Path("/findCharacter/{id}")
 	@GET
 	@Produces({ "application/json" })
 	public String findCharacter(Long id) {

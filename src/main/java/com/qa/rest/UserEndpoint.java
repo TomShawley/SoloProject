@@ -17,7 +17,7 @@ public class UserEndpoint {
 		return service.createUser(user);
 	}
 	
-	@Path("deleteUser")
+	@Path("deleteUser/{id}")
 	@DELETE
 	@Produces({"application/json"})
 	public String deleteUser(Long id) {

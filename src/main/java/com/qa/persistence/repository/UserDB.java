@@ -1,8 +1,9 @@
 package com.qa.persistence.repository;
 
+import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
 
-import javax.enterprise.inject.Default;
+import javax.enterprise.inject.Vetoed;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -12,21 +13,22 @@ import com.qa.persistence.domain.User;
 import com.qa.util.JSONUtil;
 
 @Transactional(SUPPORTS)
-@Default
+@Vetoed
 public class UserDB implements Repository {
-	@PersistenceContext(unitName = "primary")
+	@PersistenceContext(unitName = "alternative")
 	private EntityManager manager;
 
 	@Inject
 	private JSONUtil util;
-
+	
+	@Transactional(REQUIRED)
 	public String createUser(String user) {
 		User aUser = util.getObjectForJSON(user, User.class);
 		manager.persist(aUser);
 		return "{\"message\": \"User has been sucessfully added\"}";
 		
 	}
-
+	@Transactional(REQUIRED)
 	public String deleteUser(Long id) {
 		User userInDB = manager.find(User.class, id);
 		if (userInDB != null) {
