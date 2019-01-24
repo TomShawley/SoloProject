@@ -13,13 +13,13 @@ public class Character {
 	private String name;
 	private String race;
 	private String characterClass;
-	private int level;
-	private int strength;
-	private int dexterity;
-	private int constitution;
-	private int intelligence;
-	private int wisdom;
-	private int charisma;
+	private String level;
+	private String strength;
+	private String dexterity;
+	private String constitution;
+	private String intelligence;
+	private String wisdom;
+	private String charisma;
 	private Boolean acrobatics;
 	private Boolean animalHandling;
 	private Boolean arcana;
@@ -39,18 +39,15 @@ public class Character {
 	private Boolean stealth;
 	private Boolean survival;
 
-	public Character() {
+	
 
-	}
-
-	public Character(Long id, String name, String race, String characterClass, String background, int level,
-			String subClass, String spells, int strength, int dexterity, int constitution, int intelligence, int wisdom,
-			int charisma, Boolean acrobatics, Boolean animalHandling, Boolean arcana, Boolean athletics,
+	public Character(String name, String race, String characterClass, String background, String level,
+			String subClass, String spells, String strength, String dexterity, String constitution, String intelligence, String wisdom,
+			String charisma, Boolean acrobatics, Boolean animalHandling, Boolean arcana, Boolean athletics,
 			Boolean deception, Boolean history, Boolean insight, Boolean intimidation, Boolean investigation,
 			Boolean medicine, Boolean nature, Boolean perception, Boolean performance, Boolean persausion,
 			Boolean religion, Boolean sleightOfHand, Boolean stealth, Boolean survival) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.race = race;
 		this.characterClass = characterClass;
@@ -80,13 +77,8 @@ public class Character {
 		this.stealth = stealth;
 		this.survival = survival;
 	}
+	public Character() {
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getName() {
@@ -115,59 +107,59 @@ public class Character {
 
 
 
-	public int getLevel() {
+	public String getLevel() {
 		return level;
 	}
 
-	public void setLevel(int level) {
+	public void setLevel(String level) {
 		this.level = level;
 	}
 
-	public int getStrength() {
+	public String getStrength() {
 		return strength;
 	}
 
-	public void setStrength(int strength) {
+	public void setStrength(String strength) {
 		this.strength = strength;
 	}
 
-	public int getDexterity() {
+	public String getDexterity() {
 		return dexterity;
 	}
 
-	public void setDexterity(int dexterity) {
+	public void setDexterity(String dexterity) {
 		this.dexterity = dexterity;
 	}
 
-	public int getConstitution() {
+	public String getConstitution() {
 		return constitution;
 	}
 
-	public void setConstitution(int constitution) {
+	public void setConstitution(String constitution) {
 		this.constitution = constitution;
 	}
 
-	public int getIntelligence() {
+	public String getIntelligence() {
 		return intelligence;
 	}
 
-	public void setIntelligence(int intelligence) {
+	public void setIntelligence(String intelligence) {
 		this.intelligence = intelligence;
 	}
 
-	public int getWisdom() {
+	public String getWisdom() {
 		return wisdom;
 	}
 
-	public void setWisdom(int wisdom) {
+	public void setWisdom(String wisdom) {
 		this.wisdom = wisdom;
 	}
 
-	public int getCharisma() {
+	public String getCharisma() {
 		return charisma;
 	}
 
-	public void setCharisma(int charisma) {
+	public void setCharisma(String charisma) {
 		this.charisma = charisma;
 	}
 

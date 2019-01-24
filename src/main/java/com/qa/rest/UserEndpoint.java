@@ -20,7 +20,7 @@ public class UserEndpoint {
 	@Path("deleteUser/{id}")
 	@DELETE
 	@Produces({"application/json"})
-	public String deleteUser(Long id) {
+	public String deleteUser(@PathParam("id") Long id) {
 		return service.deleteUser(id);
 	}
 	

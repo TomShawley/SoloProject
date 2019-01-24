@@ -15,7 +15,7 @@ import com.qa.util.JSONUtil;
 @Transactional(SUPPORTS)
 @Vetoed
 public class UserDB implements Repository {
-	@PersistenceContext(unitName = "alternative")
+	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
 
 	@Inject
