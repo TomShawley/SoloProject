@@ -18,7 +18,7 @@
   flex-direction: row;
   align-items: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
   
 }
 .AppBody {
@@ -30,7 +30,7 @@
   align-items: center;
   
   font-size: calc(10px + 2vmin);
-  color: gainsboro;
+  color: black;
   
 }
 .AppBody-Abilities {
@@ -41,7 +41,7 @@
   align-items: right;
   
   font-size: calc(10px + 2vmin);
-  color: gainsboro;
+  color: black;
   
 }
 .AppBody-Dropdown {
@@ -63,8 +63,8 @@
   align-items: center;
   
   
-  font-size: 10px;
-  color: gainsboro;
+  font-size: 15px;
+  color: black;
   
 }
 ul {

@@ -306,5 +306,11 @@ public class Character {
 	public void setSurvival(Boolean survival) {
 		this.survival = survival;
 	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 }

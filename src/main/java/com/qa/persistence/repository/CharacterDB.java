@@ -3,6 +3,8 @@ package com.qa.persistence.repository;
 import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
 
+import java.util.List;
+
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -22,6 +24,10 @@ public class CharacterDB implements Repository {
 	@Inject
 	private JSONUtil util;
 
+	@Inject
+	Character characters;
+	private List<Character> characterList;
+
 	public String createUser(String User) {
 
 		return null;
@@ -31,6 +37,7 @@ public class CharacterDB implements Repository {
 
 		return null;
 	}
+
 	@Transactional(REQUIRED)
 	public String createCharacter(String character) {
 		Character aCharacter = util.getObjectForJSON(character, Character.class);
@@ -38,6 +45,7 @@ public class CharacterDB implements Repository {
 		return "{\"message\": \"character has been sucessfully added\"}";
 
 	}
+
 	@Transactional(REQUIRED)
 	public String deleteCharacter(Long id) {
 		Character characterInDB = manager.find(Character.class, id);
@@ -48,6 +56,7 @@ public class CharacterDB implements Repository {
 		return "{\"message\": \"account sucessfully deleted\"}";
 
 	}
+
 	@Transactional(REQUIRED)
 	public String updateCharacter(Long id, String character) {
 		Character aCharacter = manager.find(Character.class, id);
@@ -55,14 +64,25 @@ public class CharacterDB implements Repository {
 		Character updCharacter = util.getObjectForJSON(character, Character.class);
 		manager.persist(updCharacter);
 		return "{\"message\": \"account has been sucessfully updated\"}";
-		
+
 	}
 
 	public String findCharacter(Long id) {
 		Character character = manager.find(Character.class, id);
 		return util.getJSONForObject(character);
-		
+
 	}
+
+//	public String findCharacter(String name) {
+//			if (name == characters.getName()) {
+//				Long id = characters.getId();
+//				Character character = manager.find(Character.class, id);
+//				return util.getJSONForObject(character);
+////			}
+//		
+//
+//		return "No Characters of that Name";
+//	}
 
 	public EntityManager getManager() {
 		return manager;

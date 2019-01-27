@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 class characterCreation extends Component {
+    createCharacter = (event) => {
+        axios({
+            method: 'post',
+            url:'http://localhost:8080/DnDProject/rest/character/createCharacter',
+            responseType: 'json'
+        })
+    }
     render() {
         return (
             <div className="App">
