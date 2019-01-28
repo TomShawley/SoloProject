@@ -117,12 +117,12 @@ border: 0px;
 
 
 }
-.dropbtn-race {
+.dropbtn {
   background-color: whitesmoke;
   color: black;
-  padding: 16px;
-  font-size: 16px;
-  border-width: 1px;
+  padding: 10px;
+  font-size: 12px;
+  border-width: 0px;
   min-width:150px;
   border-color: Black;
 }
@@ -167,6 +167,7 @@ border: 0px;
 
 .dropdown:hover .dropbtn-class {background-color: lightgray;}
 .dropdown:hover .dropbtn-race {background-color: lightgray;}
+
 
 .App-link {
   color: #61dafb;

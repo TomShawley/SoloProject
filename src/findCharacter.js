@@ -54,7 +54,7 @@ class findCharacter extends Component {
         
          
         return (
-            <div className="App">
+            <div >
 
 
                 <div className="AppBody">

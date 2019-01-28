@@ -73,16 +73,7 @@ public class CharacterDB implements Repository {
 
 	}
 
-//	public String findCharacter(String name) {
-//			if (name == characters.getName()) {
-//				Long id = characters.getId();
-//				Character character = manager.find(Character.class, id);
-//				return util.getJSONForObject(character);
-////			}
-//		
-//
-//		return "No Characters of that Name";
-//	}
+
 
 	public EntityManager getManager() {
 		return manager;
