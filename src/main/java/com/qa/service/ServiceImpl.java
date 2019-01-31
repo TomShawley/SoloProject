@@ -28,10 +28,12 @@ public class ServiceImpl implements Service {
 		return repo.updateCharacter(id, character);
 	}
 
-	public String findCharacter(Long id) {
-		return repo.findCharacter(id);
+	public String getCharacter(String name) {
+		return repo.getCharacter(name);
+	}
+
 	}
 
 	
 
-}
+

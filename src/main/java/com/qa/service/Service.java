@@ -10,7 +10,7 @@ public interface Service {
 	String createCharacter(String character);
 	String deleteCharacter(Long id);
 	String updateCharacter(Long id, String character);
-	String findCharacter(Long id);
+	String getCharacter(String name);
 
 
 

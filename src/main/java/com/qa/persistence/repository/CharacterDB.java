@@ -3,12 +3,14 @@ package com.qa.persistence.repository;
 import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import com.qa.persistence.domain.Character;
@@ -67,10 +69,18 @@ public class CharacterDB implements Repository {
 
 	}
 
-	public String findCharacter(Long id) {
-		Character character = manager.find(Character.class, id);
-		return util.getJSONForObject(character);
-
+//	public String findCharacter(Long id) {
+//		Character character = manager.find(Character.class, id);
+//		return util.getJSONForObject(character);
+//
+//	}
+	
+	public String getCharacter(String name) {
+		Query query = manager.createQuery("Select a FROM Character a WHERE a.name =:name");
+		query.setParameter("name", name);
+		@SuppressWarnings("unchecked")
+		Collection<Character> characters = (Collection<Character>) query.getResultList();
+		return util.getJSONForObject(characters);
 	}
 
 

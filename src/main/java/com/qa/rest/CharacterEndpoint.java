@@ -37,11 +37,11 @@ public class CharacterEndpoint {
 		return service.updateCharacter(id, character);
 	}
 
-	@Path("/findCharacter/{id}")
+	@Path("/getCharacter/{name}")
 	@GET
 	@Produces({ "application/json" })
-	public String findCharacter(@PathParam("id") Long id) {
-		return service.findCharacter(id);
+	public String getCharacter(@PathParam("name") String name) {
+		return service.getCharacter(name);
 	}
 
 	public void setService(Service service) {

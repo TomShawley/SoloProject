@@ -56,7 +56,7 @@ public class UserDB implements Repository {
 		return null;
 	}
 
-	public String findCharacter(Long id) {
+	public String getCharacter(String name) {
 
 		return null;
 	}

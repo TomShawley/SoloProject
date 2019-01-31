@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import axios from 'axios';
 
@@ -321,12 +321,13 @@ class updateCharacter extends Component {
                 <br />
                 <br />
                 <br />
-
+<form>
                 <div className='AppBody'>
-                    <button class='AppButton' onClick={this.updateCharacter}>Update Character</button>
+                    <button type="submit" class='AppButton' onClick={this.updateCharacter}>Update Character</button>
 
 
                 </div>
+                </form>
             </div>
                     </div >
                 

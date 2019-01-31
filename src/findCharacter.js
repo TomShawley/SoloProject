@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import axios from 'axios';
 import './App.css';
 
@@ -20,6 +20,7 @@ class findCharacter extends Component {
             characterIntelligence:"",
             characterWisdom: "",
             characterCharisma:"",
+            characterUser:"",
 
         }
         this.findCharacter = this.findCharacter.bind(this);
@@ -28,13 +29,13 @@ class findCharacter extends Component {
     findCharacter = (event) => {
         axios({
             method:'get',
-            url: 'http://localhost:8080/DnDProject/rest/character/findCharacter/' + this.state.name,
+            url: 'http://localhost:8080/DnDProject/rest/character/getCharacter/' + this.state.name,
             responseType: 'json'
         })
         .then(res => {
             this.setState({characterName: res.data.name})
             this.setState({characterRace: res.data.race})
-            this.setState({characterClass: res.data.class})
+            this.setState({characterClass: res.data.characterClass})
             this.setState({characterLevel: res.data.level})
             this.setState({characterStrength: res.data.strength})
             this.setState({characterDexterity: res.data.dexterity})
@@ -42,7 +43,8 @@ class findCharacter extends Component {
             this.setState({characterIntelligence: res.data.intelligence})
             this.setState({characterWisdom: res.data.wisdom})
             this.setState({characterCharisma: res.data.charisma})
-            console.log(this.state.character);
+            // this.setState({characterUser: res.data.username})
+            console.log(this.state.characterName);
         })
     }
     setName(event) {
@@ -77,7 +79,8 @@ class findCharacter extends Component {
                     Constitution:{this.state.characterConstitution}<br/>
                     Intelligence:{this.state.characterIntelligence}<br/>
                     Wisdom:{this.state.characterWisdom}<br/>
-                    Charisma:{this.state.characterCharisma}
+                    Charisma:{this.state.characterCharisma}<br/>
+                    {/* User:{this.state.characterUser} */}
                 </div>
 </div>
             </div>
