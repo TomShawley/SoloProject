@@ -17,11 +17,11 @@ public class UserEndpoint {
 		return service.createUser(user);
 	}
 	
-	@Path("deleteUser/{id}")
+	@Path("deleteUser/{userName}")
 	@DELETE
 	@Produces({"application/json"})
-	public String deleteUser(@PathParam("id") Long id) {
-		return service.deleteUser(id);
+	public String deleteUser(@PathParam("userName") String userName) {
+		return service.deleteUser(userName);
 	}
 	
 

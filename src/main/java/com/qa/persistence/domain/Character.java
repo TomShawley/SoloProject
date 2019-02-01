@@ -25,6 +25,8 @@ public class Character {
 	private String wisdom;
 	private String charisma;
 	
+	private Long userid;
+	
 	
 
 

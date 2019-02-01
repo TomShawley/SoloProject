@@ -35,7 +35,7 @@ public class CharacterDB implements Repository {
 		return null;
 	}
 
-	public String deleteUser(Long id) {
+	public String deleteUser(String userName) {
 
 		return null;
 	}

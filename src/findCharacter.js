@@ -33,6 +33,7 @@ class findCharacter extends Component {
             responseType: 'json'
         })
         .then(res => {
+            if (res.data[0] != null ) {
             this.setState({characterName: res.data[0].name})
             this.setState({characterRace: res.data[0].race})
             this.setState({characterClass: res.data[0].characterClass})
@@ -43,8 +44,19 @@ class findCharacter extends Component {
             this.setState({characterIntelligence: res.data[0].intelligence})
             this.setState({characterWisdom: res.data[0].wisdom})
             this.setState({characterCharisma: res.data[0].charisma})
-            // this.setState({characterUser: res.data.username})
             console.log(this.state.name);
+            } else {
+                this.setState({characterName: " -"})
+            this.setState({characterRace: " -"})
+            this.setState({characterClass: " -"})
+            this.setState({characterLevel: " -"})
+            this.setState({characterStrength:" "})
+            this.setState({characterDexterity: " -"})
+            this.setState({characterConstitution: " -"})
+            this.setState({characterIntelligence: " -"})
+            this.setState({characterWisdom:" -"})
+            this.setState({characterCharisma:" -"})
+            }
         })
     }
     setName(event) {
@@ -80,7 +92,7 @@ class findCharacter extends Component {
                     Intelligence:{this.state.characterIntelligence}<br/>
                     Wisdom:{this.state.characterWisdom}<br/>
                     Charisma:{this.state.characterCharisma}<br/>
-                    {/* User:{this.state.characterUser} */}
+                    
                 </div>
 </div>
             </div>

@@ -4,7 +4,7 @@ public interface Repository {
 	
 	
 	String createUser(String user);
-	String deleteUser(Long id);
+	String deleteUser(String userName);
 	
 	
 
