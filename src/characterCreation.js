@@ -152,7 +152,7 @@ class characterCreation extends Component {
                             <button class="dropbtn" onClick={this.setLevel} value="17">17</button>
                             <button class="dropbtn" onClick={this.setLevel} value="18">18</button>
                             <button class="dropbtn" onClick={this.setLevel} value="19">19</button>
-                            <button class="dropbtn" onClick={this.setLevel} value="1">20</button>
+                            <button class="dropbtn" onClick={this.setLevel} value="20">20</button>
                         </div>
                     </div>
 
@@ -180,7 +180,7 @@ class characterCreation extends Component {
                             <button class="dropbtn" onClick={this.setStrength} value="17">17</button>
                             <button class="dropbtn" onClick={this.setStrength} value="18">18</button>
                             <button class="dropbtn" onClick={this.setStrength} value="19">19</button>
-                            <button class="dropbtn" onClick={this.setStrength} value="1">20</button>
+                            <button class="dropbtn" onClick={this.setStrength} value="20">20</button>
                     </div>
                 </div>
                 <div class="dropdown">

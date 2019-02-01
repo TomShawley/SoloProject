@@ -19,7 +19,7 @@ class deleteCharacter extends Component {
             responseType: 'json'
         })
         .then(res => {
-            alert("Character Deleted")
+            window.alert("Character Deleted")
         })
     }
      setName(event) {
