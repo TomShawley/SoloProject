@@ -35,8 +35,8 @@ class deleteCharacter extends Component {
                     <br />
                     <br />
                     <br />
-                    <br />
-                    <button class='AppButton' onClick={this.deleteCharacter}>Delete Character</button>
+                    <br /><form>
+                    <button class='AppButton' onClick={this.deleteCharacter}>Delete Character</button></form>
                 </body>
 
             </div>

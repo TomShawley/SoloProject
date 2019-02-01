@@ -307,12 +307,12 @@ class characterCreation extends Component {
                     <br />
                     <br />
                     <br />
-
+<form>
                     <div className='AppBody'>
                         <button class='AppButton' onClick={this.createCharacter}>Create Character</button>
 
 
-                    </div>
+                    </div></form>
                     </div>
                     </div>
                 
