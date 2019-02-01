@@ -7,8 +7,10 @@ import javax.enterprise.inject.Vetoed;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
+import com.qa.persistence.domain.Character;
 import com.qa.persistence.domain.User;
 import com.qa.util.JSONUtil;
 
@@ -29,13 +31,19 @@ public class UserDB implements Repository {
 		
 	}
 	@Transactional(REQUIRED)
-	public String deleteUser(Long id) {
-		User userInDB = manager.find(User.class, id);
-		if (userInDB != null) {
-			manager.remove(userInDB);
+	public String deleteUser(String userName) {
+		Query query = manager.createQuery("Select id FROM User a WHERE a.username =:userName");
+		query.setParameter("username", userName);
+		@SuppressWarnings("unchecked")
+		Long UserId = (long) query.getSingleResult();
+		Character UserInDB = manager.find(Character.class, UserId);
+	
+		if (UserInDB != null) {
+			manager.remove(UserInDB);
+			return "{\"message\": \"User sucessfully deleted\"}";
 		}
 
-		return "{\"message\": \"User sucessfully deleted\"}";
+		return "{\"message\": \"User not sucessfully deleted\"}";
 		
 	}
 
@@ -75,5 +83,6 @@ public class UserDB implements Repository {
 	public void setUtil(JSONUtil util) {
 		this.util = util;
 	}
+	
 
 }

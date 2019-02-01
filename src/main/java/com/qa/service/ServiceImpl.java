@@ -12,8 +12,8 @@ public class ServiceImpl implements Service {
 		return repo.createUser(user);
 	}
 
-	public String deleteUser(Long id) {
-		return repo.deleteUser(id);
+	public String deleteUser(String userName) {
+		return repo.deleteUser(userName);
 	}
 
 	public String createCharacter(String character) {
