@@ -29,22 +29,22 @@ class findCharacter extends Component {
     findCharacter = (event) => {
         axios({
             method:'get',
-            url: 'http://localhost:8080/DnDProject/rest/character/getCharacter/' + this.state.name,
+            url: 'http://localhost:8080/DnDProject/rest/character/findCharacter/' + this.state.name,
             responseType: 'json'
         })
         .then(res => {
-            this.setState({characterName: res.data.name})
-            this.setState({characterRace: res.data.race})
-            this.setState({characterClass: res.data.characterClass})
-            this.setState({characterLevel: res.data.level})
-            this.setState({characterStrength: res.data.strength})
-            this.setState({characterDexterity: res.data.dexterity})
-            this.setState({characterConstitution: res.data.constitution})
-            this.setState({characterIntelligence: res.data.intelligence})
-            this.setState({characterWisdom: res.data.wisdom})
-            this.setState({characterCharisma: res.data.charisma})
+            this.setState({characterName: res.data[0].name})
+            this.setState({characterRace: res.data[0].race})
+            this.setState({characterClass: res.data[0].characterClass})
+            this.setState({characterLevel: res.data[0].level})
+            this.setState({characterStrength: res.data[0].strength})
+            this.setState({characterDexterity: res.data[0].dexterity})
+            this.setState({characterConstitution: res.data[0].constitution})
+            this.setState({characterIntelligence: res.data[0].intelligence})
+            this.setState({characterWisdom: res.data[0].wisdom})
+            this.setState({characterCharisma: res.data[0].charisma})
             // this.setState({characterUser: res.data.username})
-            console.log(this.state.characterName);
+            console.log(this.state.name);
         })
     }
     setName(event) {
