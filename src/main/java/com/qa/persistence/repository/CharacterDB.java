@@ -3,12 +3,14 @@ package com.qa.persistence.repository;
 import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import com.qa.persistence.domain.Character;
@@ -47,30 +49,42 @@ public class CharacterDB implements Repository {
 	}
 
 	@Transactional(REQUIRED)
-	public String deleteCharacter(Long id) {
-		Character characterInDB = manager.find(Character.class, id);
+	public String deleteCharacter(String name) {
+		Query query = manager.createQuery("Select id FROM Character a WHERE a.name =:name");
+		query.setParameter("name", name);
+		@SuppressWarnings("unchecked")
+		Long characterId = (long) query.getSingleResult();
+		Character characterInDB = manager.find(Character.class, characterId);
+	
 		if (characterInDB != null) {
 			manager.remove(characterInDB);
+			return "{\"message\": \"character sucessfully deleted\"}";
 		}
 
-		return "{\"message\": \"account sucessfully deleted\"}";
+		return "{\"message\": \"character sucessfully deleted\"}";
 
 	}
 
 	@Transactional(REQUIRED)
-	public String updateCharacter(Long id, String character) {
-		Character aCharacter = manager.find(Character.class, id);
+	public String updateCharacter(String name, String character) {
+		Query query = manager.createQuery("Select id FROM Character a WHERE a.name =:name");
+		query.setParameter("name", name);
+		@SuppressWarnings("unchecked")
+		Long characterId = (long) query.getSingleResult();
+		Character aCharacter = manager.find(Character.class, characterId);
 		manager.remove(aCharacter);
 		Character updCharacter = util.getObjectForJSON(character, Character.class);
 		manager.persist(updCharacter);
-		return "{\"message\": \"account has been sucessfully updated\"}";
+		return "{\"message\": \"character has been sucessfully updated\"}";
 
 	}
 
-	public String findCharacter(Long id) {
-		Character character = manager.find(Character.class, id);
-		return util.getJSONForObject(character);
-
+	public String getCharacter(String name) {
+		Query query = manager.createQuery("Select a FROM Character a WHERE a.name =:name");
+		query.setParameter("name", name);
+		@SuppressWarnings("unchecked")
+		Collection<Character> characters = (Collection<Character>) query.getResultList();
+		return util.getJSONForObject(characters);
 	}
 
 

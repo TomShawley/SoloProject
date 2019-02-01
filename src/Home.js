@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import axios from 'axios';
 
@@ -47,13 +47,13 @@ class Home extends Component {
     render() {
         return (
             <div>
-            <div class='AppBody' >
+            <div className='AppBody' >
                 <input type="text" placeholder="Username" onChange={(this.setUsername)} />
                 <input type="text" placeholder="Password" onChange={(this.setPassword)} />
                 <button class='AppButton' onClick={this.createUser}>Create User</button>
 
             </div>
-            <div class='AppBody' >
+            <div className='AppBody' >
                 <input type="text" placeholder="Username" onChange={(this.setName)} />
 
                 <button class='AppButton' onClick={this.deleteUser}>Delete User</button>

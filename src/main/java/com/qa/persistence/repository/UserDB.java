@@ -46,17 +46,17 @@ public class UserDB implements Repository {
 		return null;
 	}
 
-	public String deleteCharacter(Long id) {
+	public String deleteCharacter(String name) {
 
 		return null;
 	}
 
-	public String updateCharacter(Long id, String character) {
+	public String updateCharacter(String name, String character) {
 
 		return null;
 	}
 
-	public String findCharacter(Long id) {
+	public String getCharacter(String name) {
 
 		return null;
 	}

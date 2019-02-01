@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import axios from 'axios';
 import './App.css';
 
@@ -20,6 +20,7 @@ class findCharacter extends Component {
             characterIntelligence:"",
             characterWisdom: "",
             characterCharisma:"",
+            characterUser:"",
 
         }
         this.findCharacter = this.findCharacter.bind(this);
@@ -32,17 +33,18 @@ class findCharacter extends Component {
             responseType: 'json'
         })
         .then(res => {
-            this.setState({characterName: res.data.name})
-            this.setState({characterRace: res.data.race})
-            this.setState({characterClass: res.data.class})
-            this.setState({characterLevel: res.data.level})
-            this.setState({characterStrength: res.data.strength})
-            this.setState({characterDexterity: res.data.dexterity})
-            this.setState({characterConstitution: res.data.constitution})
-            this.setState({characterIntelligence: res.data.intelligence})
-            this.setState({characterWisdom: res.data.wisdom})
-            this.setState({characterCharisma: res.data.charisma})
-            console.log(this.state.character);
+            this.setState({characterName: res.data[0].name})
+            this.setState({characterRace: res.data[0].race})
+            this.setState({characterClass: res.data[0].characterClass})
+            this.setState({characterLevel: res.data[0].level})
+            this.setState({characterStrength: res.data[0].strength})
+            this.setState({characterDexterity: res.data[0].dexterity})
+            this.setState({characterConstitution: res.data[0].constitution})
+            this.setState({characterIntelligence: res.data[0].intelligence})
+            this.setState({characterWisdom: res.data[0].wisdom})
+            this.setState({characterCharisma: res.data[0].charisma})
+            // this.setState({characterUser: res.data.username})
+            console.log(this.state.name);
         })
     }
     setName(event) {
@@ -77,7 +79,8 @@ class findCharacter extends Component {
                     Constitution:{this.state.characterConstitution}<br/>
                     Intelligence:{this.state.characterIntelligence}<br/>
                     Wisdom:{this.state.characterWisdom}<br/>
-                    Charisma:{this.state.characterCharisma}
+                    Charisma:{this.state.characterCharisma}<br/>
+                    {/* User:{this.state.characterUser} */}
                 </div>
 </div>
             </div>

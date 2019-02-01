@@ -20,18 +20,20 @@ public class ServiceImpl implements Service {
 		return repo.createCharacter(character);
 	}
 
-	public String deleteCharacter(Long id) {
-		return repo.deleteCharacter(id);
+	public String deleteCharacter(String name) {
+		return repo.deleteCharacter(name);
 	}
 
-	public String updateCharacter(Long id, String character) {
-		return repo.updateCharacter(id, character);
+	public String updateCharacter(String name, String character) {
+		return repo.updateCharacter(name, character);
 	}
 
-	public String findCharacter(Long id) {
-		return repo.findCharacter(id);
+	public String getCharacter(String name) {
+		return repo.getCharacter(name);
+	}
+
 	}
 
 	
 
-}
+

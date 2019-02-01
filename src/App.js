@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import characterCreation from './characterCreation.js';
 import {BrowserRouter, Route} from 'react-router-dom';

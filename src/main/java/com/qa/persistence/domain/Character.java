@@ -1,11 +1,15 @@
 package com.qa.persistence.domain;
 
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import javax.persistence.Table;
+
 @Entity
+@Table(name = "CHARACTER")
 public class Character {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
@@ -20,6 +24,8 @@ public class Character {
 	private String intelligence;
 	private String wisdom;
 	private String charisma;
+	
+	
 
 
 	
