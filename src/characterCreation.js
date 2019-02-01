@@ -18,6 +18,7 @@ class characterCreation extends Component {
             characterIntelligence:"",
             characterWisdom: "",
             characterCharisma:"",
+            
         }
         this.createCharacter=this.createCharacter.bind(this);
         this.setName=this.setName.bind(this);
@@ -49,8 +50,13 @@ class characterCreation extends Component {
                 wisdom:this.state.characterWisdom,
                 charisma:this.state.characterCharisma,
                 
+                
             }
         })
+        .then(res => {
+            alert("Character Created")
+        })
+    
     }
     setName(event) {
         this.setState({ characterName: event.target.value})

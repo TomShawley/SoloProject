@@ -56,6 +56,7 @@ class updateCharacter extends Component {
             })
             .then(res => {
                 this.setState({message: "Your character has been updated"})
+                alert("Character Updated")
             
         })
     }

@@ -18,6 +18,9 @@ class deleteCharacter extends Component {
             url: 'http://localhost:8080/DnDProject/rest/character/deleteCharacter/' + this.state.name,
             responseType: 'json'
         })
+        .then(res => {
+            alert("Character Deleted")
+        })
     }
      setName(event) {
     
