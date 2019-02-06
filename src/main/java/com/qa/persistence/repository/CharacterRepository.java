@@ -1,14 +1,7 @@
 package com.qa.persistence.repository;
 
-public interface Repository {
-	
-	
-	String createUser(String user);
-	String deleteUser(String userName);
-	
-	
-
-	String createCharacter(String character);
+public interface CharacterRepository {
+String createCharacter(String character);
 	String deleteCharacter(String name);
 	String updateCharacter(String name, String character);
 	String getCharacter(String name);

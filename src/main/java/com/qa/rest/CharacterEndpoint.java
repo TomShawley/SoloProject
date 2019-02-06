@@ -9,12 +9,14 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import com.qa.service.Service;
+import com.qa.service.CharacterService;
+import com.qa.service.CharacterServiceImpl;
+
 
 @Path("/character")
 public class CharacterEndpoint {
 	@Inject
-	private Service service;
+	private CharacterService service;
 
 	@Path("/createCharacter")
 	@POST
@@ -44,7 +46,7 @@ public class CharacterEndpoint {
 		return service.getCharacter(name);
 	}
 
-	public void setService(Service service) {
+	public void setService(CharacterService service) {
 		this.service = service;
 	}
 

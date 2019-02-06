@@ -19,7 +19,7 @@ import com.qa.util.JSONUtil;
 
 @Transactional(SUPPORTS)
 @Default
-public class CharacterDB implements Repository {
+public class CharacterDB implements CharacterRepository {
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
 
@@ -30,15 +30,6 @@ public class CharacterDB implements Repository {
 	Character characters;
 	private List<Character> characterList;
 
-	public String createUser(String User) {
-
-		return null;
-	}
-
-	public String deleteUser(String userName) {
-
-		return null;
-	}
 
 	@Transactional(REQUIRED)
 	public String createCharacter(String character) {
@@ -105,4 +96,5 @@ public class CharacterDB implements Repository {
 		this.util = util;
 	}
 
+	
 }

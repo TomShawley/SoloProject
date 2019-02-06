@@ -2,19 +2,15 @@ package com.qa.service;
 
 import javax.inject.Inject;
 
-import com.qa.persistence.repository.Repository;
 
-public class ServiceImpl implements Service {
+import com.qa.persistence.repository.CharacterRepository;
+
+
+public class CharacterServiceImpl implements CharacterService {
 	@Inject
-	private Repository repo;
+	private CharacterRepository repo;
 
-	public String createUser(String user) {
-		return repo.createUser(user);
-	}
-
-	public String deleteUser(String userName) {
-		return repo.deleteUser(userName);
-	}
+	
 
 	public String createCharacter(String character) {
 		return repo.createCharacter(character);

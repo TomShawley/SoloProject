@@ -12,8 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "USER")
 public class User {
+	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private Long userid;
@@ -49,6 +49,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Set<Character> getCharacters() {
+		return characters;
+	}
+
+	public void setCharacters(Set<Character> characters) {
+		this.characters = characters;
 	}
 
 }
