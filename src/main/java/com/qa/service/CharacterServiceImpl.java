@@ -17,10 +17,12 @@ public class CharacterServiceImpl implements CharacterService {
 
 	public String createCharacter(String character) {
 		Character newCharacter = util.getObjectForJSON(character, Character.class);
-		if (newCharacter.getName().matches("[a-zA-Z]+") != true) {
-			return "{\"message\": \"Character name can only contain letters\"}";
-			
+		if (newCharacter.getName().isEmpty() == true) {
+			return "{\"message\": \"Character name must contain atleast one letters\"}";
 		}
+		if (newCharacter.getName().matches("[a-zA-Z]+") != true) {
+			return "{\"message\": \"Character name can only contain letters\"}";	
+		} 
 		return repo.createCharacter(character);
 	}
 
