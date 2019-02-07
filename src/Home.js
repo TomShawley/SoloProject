@@ -11,6 +11,7 @@ class Home extends Component {
             name:"",
             username: "",
             password: "",
+            message:"",
         }
         this.createUser = this.createUser.bind(this);
         this.setUsername = this.setUsername.bind(this);
@@ -27,7 +28,16 @@ class Home extends Component {
                 password: this.state.password,
             }
         })
-    }
+        .then(res => {
+                this.setState({
+                    message: res.data.message,
+
+                })
+                console.log(this.state.message)
+                alert(this.state.message)
+                 })
+                }
+    
     deleteUser = (event) => {
         axios({
             method: 'delete',

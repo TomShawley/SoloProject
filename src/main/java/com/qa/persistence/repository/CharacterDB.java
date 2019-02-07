@@ -35,7 +35,7 @@ public class CharacterDB implements CharacterRepository {
 	public String createCharacter(String character) {
 		Character aCharacter = util.getObjectForJSON(character, Character.class);
 		manager.persist(aCharacter);
-		return "{\"message\": \"character has been sucessfully added\"}";
+		return "{\"message\": \"Character has been sucessfully added\"}";
 
 	}
 
@@ -75,7 +75,8 @@ public class CharacterDB implements CharacterRepository {
 		query.setParameter("name", name);
 		@SuppressWarnings("unchecked")
 		Collection<Character> characters = (Collection<Character>) query.getResultList();
-		return util.getJSONForObject(characters);
+		return util.getJSONForObject(characters); 
+ 
 	}
 
 
