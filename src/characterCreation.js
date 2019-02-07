@@ -18,6 +18,7 @@ class characterCreation extends Component {
             characterIntelligence:"",
             characterWisdom: "",
             characterCharisma:"",
+            message: "",
             
         }
         this.createCharacter=this.createCharacter.bind(this);
@@ -53,8 +54,29 @@ class characterCreation extends Component {
                 
             }
         })
-        .then(res => {
-            alert("Character Created")
+            .then(res => {
+                this.setState({
+                    message: res.data.message,
+
+                })
+                console.log(this.state.message)
+                alert(this.state.message)
+                if (this.state.message == "Character has been sucessfully added") {
+                    this.setState({
+                        name: "",
+                        characterName:"",
+                        characterRace: "",
+                        characterClass: "",
+                        characterLevel: "",
+                        characterStrength: "",
+                        characterConstitution: "",
+                        characterDexterity: "",
+                        characterIntelligence: "",
+                        characterWisdom: "",
+                        characterCharisma: "",
+
+                    })
+                }
         })
     
     }
@@ -313,12 +335,12 @@ class characterCreation extends Component {
                     <br />
                     <br />
                     <br />
-<form>
+
                     <div className='AppBody'>
                         <button class='AppButton' onClick={this.createCharacter}>Create Character</button>
 
 
-                    </div></form>
+                    </div>
                     </div>
                     </div>
                 

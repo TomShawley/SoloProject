@@ -22,6 +22,7 @@ class findCharacter extends Component {
             characterCharisma: "",
             characterUser: "",
             isFounds: false,
+            message: ""
 
         }
         this.findCharacter = this.findCharacter.bind(this);
@@ -33,7 +34,13 @@ class findCharacter extends Component {
             url: 'http://localhost:8080/DnDProject/rest/character/findCharacter/' + this.state.name,
             responseType: 'json'
         })
-            .then(res => {
+            .then(res => { 
+                this.setState({
+                    message: res.data.message,
+
+                })
+                console.log(this.state.message)
+                alert(this.state.message)
                 if (res.data[0] != null) {
                     this.setState({ characterName: res.data[0].name })
                     this.setState({ characterRace: res.data[0].race })
@@ -59,8 +66,12 @@ class findCharacter extends Component {
                     this.setState({ characterWisdom: " -" })
                     this.setState({ characterCharisma: " -" })
                 }
-            })
-    }
+            
+        
+               
+                
+    })}
+    
     setName(event) {
 
         this.setState({ name: event.target.value })
