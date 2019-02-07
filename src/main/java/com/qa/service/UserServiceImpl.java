@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
 	public String createUser(String user) {
 		newUser = util.getObjectForJSON(user, User.class);
 		if (newUser.getPassword().matches("(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{3,}") == false) {
-			return "{\"message\": \"Password must contain atleat one Capital Letter and one Number.\"}";
+			return "{\"message\": \"Password must contain atleast One lowercase letter, one Capital Letter and one Number.\"}";
 		} else if (newUser.getPassword().length() < 8 || newUser.getPassword().length() > 20) {
 			return "{\"message\": \"Password must be beween 8 and 20 characters.\"}";
 		}else

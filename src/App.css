@@ -67,6 +67,27 @@
   color: black;
   
 }
+.CharacterList {
+      align-content: center;  
+      text-align: center;  
+  max-height: 30vh;
+  min-width: 30vh;
+   display: flex; 
+   flex-direction: column;  
+   align-items: center; 
+background: lightgray;
+border-style: double;
+font-size: 15px;
+  color: black;
+
+}
+
+.Scroll {
+  overflow-y: scroll;
+  max-height:50vh;
+  
+  
+}
 ul {
   list-style-type: none;
   margin: 0;

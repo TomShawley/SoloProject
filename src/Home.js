@@ -9,9 +9,11 @@ class Home extends Component {
         super();
         this.state = {
             name:"",
-            username: "",
-            password: "",
+            newUsername: "",
+            newPassword: "",
             message:"",
+            username:"",
+            password:""
         }
         this.createUser = this.createUser.bind(this);
         this.setUsername = this.setUsername.bind(this);
@@ -24,8 +26,8 @@ class Home extends Component {
             method: 'post',
             url: "http://localhost:8080/DnDProject/rest/users/createUser",
             data: {
-                username: this.state.username,
-                password: this.state.password,
+                username: this.state.newUsername,
+                password: this.state.newPassword,
             }
         })
         .then(res => {
@@ -45,13 +47,19 @@ class Home extends Component {
         })
     }
     setUsername(event) {
-        this.setState({ username: event.target.value })
+        this.setState({ newUsername: event.target.value })
     }
     setPassword(event) {
-        this.setState({ password: event.target.value })
+        this.setState({ newPassword: event.target.value })
     }
     setName (event) {
         this.setState({name :event.target.value})
+    }
+    Username (event) {
+        this.setState({username: event.target.value})
+    }
+    Password (event) {
+        this.set.state({password: event.target.value})
     }
 
     render() {
@@ -67,6 +75,12 @@ class Home extends Component {
                 <input type="text" placeholder="Username" onChange={(this.setName)} />
 
                 <button class='AppButton' onClick={this.deleteUser}>Delete User</button>
+
+            </div>
+            <div className='AppBody' >
+                <input type="text" placeholder="Username" onChange={(this.Username)} />
+                <input type="text" placeholder="Password" onChange={(this.Password)} />
+                <button class='AppButton' onClick={this.login}>Sign In</button>
 
             </div>
             </div>
