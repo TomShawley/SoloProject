@@ -91,6 +91,8 @@ class Login extends Component {
     render() {
         return (
             <div>
+                <br/>
+                <br/>
                 <div className='AppBody' >
                     <input type="text" placeholder="Username" onChange={(this.setUsername)} />
                     <input type="password" placeholder="Password" onChange={(this.setPassword)} />
