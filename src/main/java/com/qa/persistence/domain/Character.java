@@ -140,5 +140,11 @@ public class Character {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	public Long getUserid() {
+		return userid;
+	}
+	public void setUserid(Long userid) {
+		this.userid = userid;
+	}
 
 }

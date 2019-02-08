@@ -24,7 +24,8 @@ class findCharacter extends Component {
             characterFound: false,
             userFound: false,
             message: "",
-            characters: [{}]
+            characters: [{}],
+            user: sessionStorage.getItem("User"),
 
         }
         this.findCharacter = this.findCharacter.bind(this);
@@ -76,7 +77,7 @@ class findCharacter extends Component {
     findUserCharacters = (event) => {
         axios({
             method: 'get',
-            url: 'http://localhost:8080/DnDProject/rest/users/getUser/TomShawley',
+            url: 'http://localhost:8080/DnDProject/rest/users/getUser/'+ this.state.user,
             responseType: 'json'
         })
             .then(res => {
@@ -107,7 +108,7 @@ class findCharacter extends Component {
                     <form onSubmit={this.update}>
                         <input id="textbox" type="text" placeholder="Finaran Goldhill" onChange={(this.setName)} ></input>
                         <input type="button" onClick={this.findCharacter} value="Find Character"></input>
-                    </form>
+                    </form><br/>
                     Find your Characters:
                     <input type="button" onClick={this.findUserCharacters} value="Get your Characters"></input>
                     <br/><div>

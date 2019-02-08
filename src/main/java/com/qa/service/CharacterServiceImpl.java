@@ -20,7 +20,7 @@ public class CharacterServiceImpl implements CharacterService {
 		newCharacter = util.getObjectForJSON(character, Character.class);
 		if (newCharacter.getName().isEmpty() == true) {
 			return "{\"message\": \"Please enter a name.\"}";
-		} else if (newCharacter.getName().contains("[a-zA-z]+") != true) {
+		} else if (newCharacter.getName().matches("[a-zA-z]+") != true) {
 			return "{\"message\": \"Character name can only contain letters\"}";
 		} else if (newCharacter.getRace().isEmpty() == true) {
 			return "{\"message\": \"Please select a Race.\"}";
@@ -58,7 +58,7 @@ public class CharacterServiceImpl implements CharacterService {
 		// }
 		if (newCharacter.getName().isEmpty() == true) {
 			return "{\"message\": \"Please enter a name.\"}";
-		} else if (newCharacter.getName().contains("[a-zA-z]+") != true) {
+		} else if (newCharacter.getName().matches("[a-zA-z]+") != true) {
 			return "{\"message\": \"Character name can only contain letters\"}";
 		} else if (newCharacter.getRace().isEmpty() == true) {
 			return "{\"message\": \"Please select a Race.\"}";

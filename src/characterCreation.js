@@ -19,6 +19,7 @@ class characterCreation extends Component {
             characterWisdom: "",
             characterCharisma:"",
             message: "",
+            user: sessionStorage.getItem("UserID"),
             
         }
         this.createCharacter=this.createCharacter.bind(this);
@@ -50,6 +51,7 @@ class characterCreation extends Component {
                 intelligence:this.state.characterIntelligence,
                 wisdom:this.state.characterWisdom,
                 charisma:this.state.characterCharisma,
+                userid:this.state.user
                 
                 
             }
