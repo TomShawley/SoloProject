@@ -21,6 +21,20 @@
   color: black;
   
 }
+.HomeAppBody {
+  align-content: center;
+   text-align: center;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Castellar";
+  font-style: "Bold";
+  
+  font-size: calc(13px + 5vmin);
+  color: black;
+}
+  
 .AppBody {
   align-content: right;
    text-align: left;
@@ -81,7 +95,19 @@ font-size: 15px;
   color: black;
 
 }
-
+.TitleBackground{
+      align-content: center;  
+      text-align: center;  
+  max-height: 15vh;
+  min-width: 30vh;
+   display: flex; 
+   flex-direction: column;  
+   align-items: center; 
+background: lightgray;
+border-style: double;
+font-size: 15px;
+  color: black;
+}
 .Scroll {
   overflow-y: scroll;
   max-height:50vh;

@@ -7,6 +7,7 @@ import Contents from './Content.js';
 import updateCharacter from './updateCharacter.js';
 import deleteCharacter from './deleteCharacter.js';
 import findCharacter from './findCharacter.js';
+import Login from './Login.js';
 import Home from './Home';
 
 
@@ -17,8 +18,9 @@ class App extends Component {
         <BrowserRouter>
 <div>
           <div>
-            <Route path={"/"} component={Contents} />
-            <Route path={"/Home"} component={Home} />
+             <Route path={"/"} component={Contents} /> 
+            <Route path={"/"} component={Home} />
+            <Route path={"/Login"} component={Login}/>
             <Route path={"/characterCreation"} component={characterCreation} />
             <Route path={"/updateCharacter"} component={updateCharacter} />
             <Route path={"/deleteCharacter"} component={deleteCharacter} />

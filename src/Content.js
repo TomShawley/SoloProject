@@ -8,7 +8,8 @@ class Contents extends Component {
          
      
                 <ul  >
-                    <li ><a href="/Home">DnD Character Creation Thing</a></li>
+                    <li ><a href="/Home">Home Page</a></li>
+                    <li ><a href="/Login">Sign Up/Sign In</a></li>
                     <li ><a href="/characterCreation">Create Character</a></li>
                     <li><a href="/findCharacter">Find Character</a></li>
                     <li><a href="/updateCharacter">Update Character</a></li>
