@@ -38,12 +38,12 @@ class findCharacter extends Component {
             responseType: 'json'
         })
             .then(res => {
+               
                 this.setState({
                     message: res.data.message,
 
                 })
-                console.log(this.state.message)
-                alert(this.state.message)
+
                 if (res.data[0] != null) {
                     this.setState({ characterName: res.data[0].name })
                     this.setState({ characterRace: res.data[0].race })
@@ -58,6 +58,7 @@ class findCharacter extends Component {
                     this.setState({ characterFound: true })
                     console.log(this.state.name);
                 } else {
+                    alert("No characters found with that name")
                     this.setState({ characterName: " -" })
                     this.setState({ characterRace: " -" })
                     this.setState({ characterClass: " -" })
@@ -77,16 +78,21 @@ class findCharacter extends Component {
     findUserCharacters = (event) => {
         axios({
             method: 'get',
-            url: 'http://localhost:8080/DnDProject/rest/users/getUser/'+ this.state.user,
+            url: 'http://localhost:8080/DnDProject/rest/users/getUser/' + this.state.user,
             responseType: 'json'
         })
             .then(res => {
-                this.setState({
-                    characters: res.data[0].characters,
-                    userFound: true
+                if (this.state.user == null) {
+                    alert("No user signed in")
+                } else {
+                    this.setState({
+                        characters: res.data[0].characters,
+                        userFound: true
+                    })
 
-                })
-                console.log(res.data[0].characters)
+                }
+
+
             })
     }
 
@@ -104,16 +110,29 @@ class findCharacter extends Component {
 
 
                 <div className="AppBody">
+                   
+                    
+                    <h1 className="HeaderAppBody">
                     Enter Character Name Here:
-                    <form onSubmit={this.update}>
+                    </h1>
+                    <form onSubmit={this.update} >
                         <input id="textbox" type="text" placeholder="Finaran Goldhill" onChange={(this.setName)} ></input>
                         <input type="button" onClick={this.findCharacter} value="Find Character"></input>
-                    </form><br/>
+                    </form>
+                   
+                    
+                    <h1 className="HeaderAppBody">
                     Find your Characters:
+                    </h1>
                     <input type="button" onClick={this.findUserCharacters} value="Get your Characters"></input>
-                    <br/><div>
+                   
+                    <br />
+                    <div className="CharacerList">
+                    <div>
                         {this.state.characterFound ?
-                            <div className="CharacterList">Name:{this.state.characterName}<br />
+                            <div className="CharacterList">
+                               
+                                Name:{this.state.characterName}<br />
                                 Race:{this.state.characterRace}<br />
                                 Class:{this.state.characterClass}<br />
                                 Level:{this.state.characterLevel}<br />
@@ -126,31 +145,32 @@ class findCharacter extends Component {
 
                             </div>
                             : null}
-                    </div>
-                    <body className="Scroll">
+                    </div><br/>
+                    <div className="Scroll">
                         {this.state.userFound ?
                             this.state.characters.map((characters, i) => {
                                 return (
                                     <div >
                                         <ul className="CharacterList">
-                                            <br/>
+                                            
                                             Name: {characters.name}<br />
-                                                Race: {characters.race}<br />
-                                                Class: {characters.characterClass}<br />
-                                                Level: {characters.level}<br />
-                                                Strength: {characters.strength}<br />
-                                                Constitution: {characters.constitution}<br />
-                                                Dexterity: {characters.dexterity}<br />
-                                                Intelligence: {characters.intelligence}<br />
-                                                Wisdom: {characters.dexterity}<br />
-                                                Charisma: {characters.charisma}<br />
-                                                <br/>
+                                            Race: {characters.race}<br />
+                                            Class: {characters.characterClass}<br />
+                                            Level: {characters.level}<br />
+                                            Strength: {characters.strength}<br />
+                                            Constitution: {characters.constitution}<br />
+                                            Dexterity: {characters.dexterity}<br />
+                                            Intelligence: {characters.intelligence}<br />
+                                            Wisdom: {characters.dexterity}<br />
+                                            Charisma: {characters.charisma}<br />
+                                            
                                         </ul>
                                     </div>
                                 )
                             })
                             : null}
-                    </body>
+                    </div><br/>
+                </div>
                 </div>
             </div>
         );

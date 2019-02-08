@@ -32,13 +32,12 @@ class deleteCharacter extends Component {
 
 
                 <body className="AppBody">
+                    <h1 className="HeaderAppBody">
                     Enter Character Name Here:
+                    </h1>
                     
           <input type="text" placeholder="GHAJSKLD" onChange={(this.setName)} />
-                    <br />
-                    <br />
-                    <br />
-                    <br /><form>
+                   <form>
                     <button class='AppButton' onClick={this.deleteCharacter}>Delete Character</button></form>
                 </body>
 

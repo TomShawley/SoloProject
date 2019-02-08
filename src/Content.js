@@ -3,11 +3,9 @@ import React, { Component } from 'react';
 class Contents extends Component {
     render() {
         return (
-            <h1 className="App-header">
+            <h1>
           
-         
-     
-                <ul  >
+                <ul className="App-header"  >
                     <li ><a href="/Home">Home Page</a></li>
                     <li ><a href="/Login">Sign Up/Sign In</a></li>
                     <li ><a href="/characterCreation">Create Character</a></li>

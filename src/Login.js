@@ -38,6 +38,7 @@ class Login extends Component {
             .then(res => {
                 this.setState({
                     message: res.data.message,
+                   
 
                 })
                 console.log(this.state.message)
@@ -94,6 +95,7 @@ class Login extends Component {
                 <br/>
                 <br/>
                 <div className='AppBody' >
+                    
                     <input type="text" placeholder="Username" onChange={(this.setUsername)} />
                     <input type="password" placeholder="Password" onChange={(this.setPassword)} />
                     <button class='AppButton' onClick={this.createUser}>Create User</button>

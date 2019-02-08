@@ -19,6 +19,7 @@ class updateCharacter extends Component {
             characterIntelligence: "",
             characterWisdom: "",
             characterCharisma: "",
+            userid:sessionStorage.getItem("UserID"),
             
         }
         this.updateCharacter = this.updateCharacter.bind(this);
@@ -51,6 +52,7 @@ class updateCharacter extends Component {
                 intelligence: this.state.characterIntelligence,
                 wisdom: this.state.characterWisdom,
                 charisma: this.state.characterCharisma,
+                userid:this.state.user,
             }
 
             })
@@ -98,11 +100,15 @@ class updateCharacter extends Component {
             <div >
 
                 <body className="AppBody">
+                    <h1 className="HeaderAppBody">
                     Enter Character to Update:
+                    </h1>
           <input type="text" placeholder="GHAJSKLD" onChange={(this.setName)} />
                 </body>
                 <body className="AppBody">
+                    <h1 className="HeaderAppBody">
                     Enter New Character Name Here:
+                    </h1>
           <input type="text" placeholder="GHAJSKLD" onChange={(this.setNewName)} />
                 </body>
             <body className="AppBody-Dropdown" >

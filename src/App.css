@@ -13,7 +13,7 @@
 
 .App-header {
   background-color: #282c34;
-  max-height: 10vh;
+  max-block-size: 15%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -25,13 +25,30 @@
   align-content: center;
    text-align: center;
   min-height: 10vh;
+  max-width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Castellar";
+  font-family: "Algerian";
   font-style: "Bold";
   
   font-size: calc(13px + 5vmin);
+  color: black;
+}
+.HeaderAppBody{
+ align-content: center;
+   text-align: center;
+  padding: 2px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Algerian";
+  font-style: "Bold";
+  background: lightgray;
+  border-style: double;
+  
+  font-size: 20px;
   color: black;
 }
   
@@ -93,6 +110,8 @@ background: lightgray;
 border-style: double;
 font-size: 15px;
   color: black;
+ 
+  
 
 }
 .TitleBackground{
@@ -110,7 +129,11 @@ font-size: 15px;
 }
 .Scroll {
   overflow-y: scroll;
-  max-height:50vh;
+  max-height:22vh;
+ 
+  
+  
+ 
   
   
 }
@@ -144,7 +167,7 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  min-height: 10vh;
+  min-height: 7vh;
   background-color: #111;
  
 }
@@ -197,6 +220,8 @@ border: 0px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   font-size: 12px;
+  overflow-y: scroll;
+  max-height: 25vh;
 
 }
 

@@ -118,7 +118,9 @@ class characterCreation extends Component {
 
 
                 <body className="AppBody">
+                    <h1 className="HeaderAppBody">
                     Enter Character Name Here:
+                    </h1>
           <input type="text" placeholder="GHAJSKLD" onChange={(this.setName)} />
                 </body>
                 <body className="AppBody-Dropdown" >
