@@ -48,6 +48,7 @@
   background: lightgray;
   border-style: double;
   
+  
   font-size: 20px;
   color: black;
 }
@@ -126,6 +127,7 @@ background: lightgray;
 border-style: double;
 font-size: 15px;
   color: black;
+  
 }
 .Scroll {
   overflow-y: scroll;
